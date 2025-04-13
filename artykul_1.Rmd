@@ -1,0 +1,197 @@
+---
+title: "Jak wygląda gra w 2 lidze na lubelszczyźnie? Start II Lublin jako przykład systemowego problemu, Lublinianka KUL Basketball jako rozwiązanie..."
+author: "Jakub Zoldak"
+date: "2025-04-13"
+output: html_document
+---
+
+## Jak działa II liga koszykówki mężczyzn?
+
+Druga liga mężczyzn w koszykówce w Polsce to trzeci poziom rozgrywek w krajowym systemie, tuż za Orlen Basket Ligą (ekstraklasą) oraz 1. ligą mężczyzn. Obecna struktura ligi składa się z czterech równorzędnych grup: A, B, C i D, z których każda liczy po 16 zespołów. Zazwyczaj są one tworzone na podstawie lokalizacji drużyn na mapie i odległości i od rywali w grupie. Łącznie oznacza to aż 64 drużyny walczące o awans i uniknięcie spadku.
+
+W trakcie sezonu zasadniczego każda z drużyn rozgrywa mecze systemem "każdy z każdym" – zarówno u siebie, jak i na wyjeździe. Po jego zakończeniu, najlepsze zespoły w każdej grupie awansują do fazy play-off, gdzie toczy się walka o trzy miejsca premiowane awansem do 1 ligi. Z drugiej strony, po dwie najsłabsze drużyny z każdej grupy muszą liczyć się z możliwością spadku do 3 ligi. 
+
+## Mapa miast w których jest drużyna w II lidze mężczyzn
+
+```{r, echo=FALSE, warning = FALSE, message = FALSE}
+library(leaflet)
+library(dplyr)
+library(tidygeocoder)
+library(htmlwidgets)
+library(ggplot2)
+library(jsonlite)
+
+cities <- c(
+  "Częstochowa", "Ostrów Wielkopolski", "Gdańsk", "Kraków", "Katowice", "Warszawa", "Toruń", "Radom",
+  "Mińsk Mazowiecki", "Kruszwica", "Bielsko-Biała", "Bytom", "Gdynia", "Wrocław", "Gorzów Wielkopolski",
+  "Bydgoszcz", "Poznań", "Elbląg", "Gdynia", "Wrocław", "Grodzisk Mazowiecki", "Tarnowskie Góry",
+  "Gliwice", "Szczecin", "Bielsk Podlaski", "Sosnowiec", "Łowicz", "Pleszew", "Katowice", "Kraków",
+  "Jelenia Góra", "Żyrardów", "Lublin", "Łódź", "Międzychód", "Zgierz", "Tarnowo Podgórne", "Rybnik",
+  "Dąbrowa Górnicza", "Przemyśl", "Zgorzelec", "Warszawa", "Prudnik", "Pabianice", "Poznań",
+  "Zielona Góra", "Kościan", "Legionowo", "Leszno", "Gniezno", "Władysławowo", "Ostrów Mazowiecki",
+  "Lublin", "Włocławek", "Kraków", "Kłodzko", "Kielce", "Sopot", "Poznań", "Wrocław", "Oleśnica",
+  "Stalowa Wola", "Pruszków", "Białystok"
+);
+city_counts <- as.data.frame(table(cities));
+
+geo_data <- city_counts %>%
+  mutate(full_name = paste(cities, "Poland")) %>%
+  geocode(full_name, method = "osm", lat = latitude, long = longitude);
+geo_data[geo_data$cities == "Ostrów Mazowiecki", "latitude"] <- 52.8025
+geo_data[geo_data$cities == "Ostrów Mazowiecki", "longitude"] <- 21.8966
+
+leaflet(data = geo_data) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    radius = ~Freq * 3,
+    color = "blue",
+    stroke = FALSE,
+    fillOpacity = 0.7,
+    label = ~paste0(cities, " (", Freq, ")")
+  ) %>%
+  addLegend(position = "bottomright", colors = "blue", labels = "Miasto")%>%
+  addControl(
+    html = "<h3 style='color: darkblue;'> Mapa miast które mają drużynę w 2 lidze</h3>",
+    position = "topright"
+  )
+
+get_voivodeship <- function(lat, lon) {
+  # budujemy URL
+  url <- paste0(
+    "https://nominatim.openstreetmap.org/reverse?format=json&lat=",
+    lat, "&lon=", lon, "&zoom=10&addressdetails=1"
+  )
+  # robimy zapytanie
+  tryCatch({
+    res <- fromJSON(url)
+    return(res$address$state)  # "state" = województwo
+  }, error = function(e) {
+    return(NA)  # jak coś nie zadziała
+  })
+}
+
+geo_data$voivodeship <- mapply(get_voivodeship, geo_data$latitude, geo_data$longitude)
+
+
+voivodeship_weighted <- geo_data %>%
+  group_by(voivodeship) %>%
+  summarise(total_mentions = sum(Freq)) %>%
+  mutate(voivodeship = gsub("województwo ", "", voivodeship)) %>%
+  arrange(desc(total_mentions))
+
+ggplot(voivodeship_weighted, aes(x = reorder(voivodeship, -total_mentions), y = total_mentions)) +
+  geom_bar(stat = "identity", fill = "tomato", width = 0.6) +  # narrower bars
+  geom_text(aes(label = total_mentions), vjust = -0.3, size = 3) +  # smaller labels
+  labs(
+    title = "Liczba wystąpień miast wg województwa",
+    x = "Województwo",
+    y = "Suma wystąpień miast"
+  ) +
+  theme_minimal(base_size = 10) +  # smaller base font size
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+
+## Lublin na mapie II ligi – tylko dwa zespoły z województwa
+W porównaniu z innymi województwami, województwo lubelskie jest pustynią pod względem ilości drużyn na tym szczeblu rozgrywek. Mimo, że województwo lubelskie może poszczycić się bogatą tradycją koszykarską, to w drugiej lidze mężczyzn reprezentowane jest obecnie tylko przez dwa zespoły z Lublina:
+
+- <span class="team-name">**Lublinianka KUL** Lublin</span>
+- <span class="team-name">**Start 2 Lublin**</span>
+
+Co ciekawe, oba te kluby rozgrywają swoje mecze domowe na tej samej hali – Hali Sportowej im. Zdzisława Niedzieli przy al. Zygmuntowskich w Lublinie. To legendarne miejsce dla lubelskiej koszykówki, znane kibicom z wielu emocjonujących spotkań.
+
+## Historia drużyny Start 2 Lublin
+
+Przemiany drużyny **Start II Lublin** na przestrzeni ostatnich pięciu lat budzą zdziwienie i niedowierzanie. Jeszcze niedawno zespół ten świętował historyczny awans do 1. ligi koszykówki mężczyzn, będąc jednym z najjaśniejszych punktów na mapie lubelskiego basketu. Dziś **Start II Lublin** zmaga się z problemami organizacyjnymi, brakiem stabilnej wizji i częstymi zmianami kadrowymi, które skutecznie hamują rozwój zawodników i zespołu. 
+
+# Sezon 2020/2021
+
+Drużyna **Start II Lublin** zapisała się na kartach historii lubelskiej koszykówki, osiągając w sezonie 2020/2021 długo wyczekiwany awans do 1 ligi koszykówki mężczyzn. Pod nazwą **UNB AZS UMCS Start Lublin** i pod wodzą trenera **Przemysława Łuszczewskiego**, zespół zdominował rozgrywki 2 ligi – zakończył sezon zasadniczy z bilansem 22-2, a u siebie w "Twierdzy MOSiR" był niepokonany. Po dramatycznym półfinale z **Rycerzami Rydzyny** drużyna z Lublina wywalczyła historyczny awans, który był spełnieniem marzeń dla klubu, zawodników i lokalnej społeczności koszykarskiej.
+
+![UNB AZS UMCS Start Lublin - 2020/2021](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2020-zdj.jpg)
+
+# Sezon 2021/2022
+
+Sezon 2021/2022 w wykonaniu **Startu II** był mniej medialny, ale nadal solidny – drużyna zakończyła rozgrywki 1 ligi z bilansem 16 zwycięstw i 16 porażek. Lublinianie otarli się o fazę play-off, a trener **Łuszczewski** wciąż budował skład w oparciu o młodych, perspektywicznych zawodników z regionu. Był to jednak również ostatni sezon współpracy z AZS UMCS – mimo braku oficjalnych informacji, zakończenie tej kooperacji zamknęło pewien etap w historii lubelskiej koszykówki.
+
+
+# Sezon 2022/2023
+
+Sezon 2022/2023 był brutalnym zderzeniem z rzeczywistością. **Start II Lublin** – już bez AZS UMCS i z młodym składem (średnia wieku 20,4 lat) – przegrał aż 33 z 34 meczów w 1 lidze. Jedyny mecz wygrali z WKK Wrocław, wspierani przez graczy z ekstraklasowego **Startu Lublin**. Mimo ogromnego zaangażowania i pracy trenera **Wojciecha Paszka**, zespół spadł do 2 ligi mężczyzn. Choć był to najtrudniejszy sezon w historii drużyny, dla młodych koszykarzy z Lublina stał się cenną lekcją i szansą na rozwój w przyszłośc. Wiele osób okrzyknęło tą drużynę, najgorszą drużyną w historii I ligi koszykówki mężczyzn.
+
+![Start II Lublin - 2022/2023](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2023-zdj.jpg)
+
+
+# Sezon 2023/2024
+
+W sezonie 2023/2024 drużyna **Start II Lublin** rozpoczęła nowy etap pod wodzą trenera **Michała Sikory**, byłego zawodnika i trenera z doświadczeniem na parkietach Energa Basket Ligi. Zespół  zakończył sezon na 11. miejscu w grupie, z bilansem 11 zwycięstw i 19 porażek. Choć wynik nie był spektakularny, drużyna pokazała postęp, stabilność i wyraźny kierunek rozwoju, względem poprzedniego sezonu.  Zespół zyskał charakterystyczny rytuał – po każdym zwycięstwie zawodnicy robią wspólne zdjęcie bez koszulek, co stało się klubową tradycją i symbolem ducha drużyny. Taka atmosfera, łącząca sportowe ambicje z młodzieńczą energią, przyciąga uwagę kibiców i buduje pozytywny wizerunek koszykówki w Lublinie.
+
+![Start II Lublin - 2023/2024](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2024-zdj.jpg)
+
+# Sezon 2024/2025
+
+Sezon 2024/2025 przyniósł kolejne zmiany w sztabie szkoleniowym **Startu II Lublin**. Nowym trenerem zespołu został **Łukasz Jagoda** – to kolejny sezon z rzędu, w którym drużyna rozpoczyna rozgrywki z nowym szkoleniowcem. Można powiedzieć, że to stało się nową tradycją w klubie ;) . Niestety, mimo optymizmu na początku sezonu i wsparcia ze strony doświadczonego **Rogera del Raye’a** (o którym więcej w kontekście **Lublinianki Kul Basketball**), zespół zanotował regres względem poprzednich rozgrywek, kończąc sezon z bilansem 7 zwycięstw i 23 porażek. Skład drużyny pozostał niemal bez zmian. Mimo to, efekty sportowe były wyraźnie słabsze. **Start II Lublin** nie zdołał utrzymać formy z sezonu 2023/2024, ledwo unikając spadku.
+
+Zdjęcia drużyny dostępne tutaj -> [Start 2 Lublin](https://www.facebook.com/mksstartlublin/posts/pfbid0FHaJsV9BUvAtJtTdh1DUD31374xBSommSqNNLV8Sj8t4xdAE3XYPAnnPjBUpc3Anl)
+
+
+# Start 2 Lublin – trampolina dla talentów czy klub dla wyjadaczy?
+
+Czy tak powinna wyglądać gra w II lidze koszykówki mężczyzn? W przypadku **Startu 2 Lublin** coraz częściej pojawiają się pytania o to, czy klub rzeczywiście spełnia swoją rolę rozwojową. Zawodnicy tacy jak **Wiktor Kępka**, **Michał Turewicz**, **Andrii Cherepanov** czy **Kacper Świtacz** od lat prezentują solidny poziom i mają potencjał, by grać wyżej. Mimo to – wciąż pozostają w strukturach drugoligowych. Problem w tym, że ich stała obecność blokuje rozwój młodych, perspektywicznych graczy, dla których II liga mogłaby być pierwszym poważnym krokiem w karierze.
+
+Kolejnym problemem **Startu 2 Lublin** jest brak stabilizacji na ławce trenerskiej. Zmiany szkoleniowców z sezonu na sezon uniemożliwiają zbudowanie długofalowej wizji i strategii rozwoju zespołu. To niestety zjawisko dość powszechne w koszykówce na Lubelszczyźnie, ale nie powinno być normą w klubie, który chce uchodzić za kuźnię talentów.
+
+# Co dalej z koszykówką w Lublinie?
+
+**Start 2 Lublin** ma potencjał, by stać się trampoliną do wyższych lig – miejscem, w którym doświadczeni gracze wspierają rozwój młodszych kolegów. Taki model sprawdza się w wielu klubach w Polsce i przynosi wymierne korzyści – zarówno sportowe, jak i organizacyjne. Aby to osiągnąć, potrzebna jest jednak spójna strategia, stabilny sztab trenerski i odwaga w stawianiu na młodzież. Inaczej Start 2 pozostanie tylko bezpieczną przystanią dla lokalnych wyjadaczy, zamiast być miejscem realnego rozwoju kariery sportowej.
+
+
+
+
+## Lublinianka KUL Lublin – powrót legendy na koszykarską mapę Polski
+
+Po ponad 40 latach nieobecności, w 2022 roku reaktywowano sekcję koszykówki legendarnej drużyny Lublinianka. Nowy rozdział w historii lubelskiego sportu rozpoczął się wraz z powołaniem Stowarzyszenia Sympatyków Koszykówki Lublinianka, które przejęło schedę po Akademii Koszykówki HoopLife, założonej przez Aleksandra Mrozika. Dzięki zakupowi tzw. "dzikiej karty", klub rozpoczął grę w II lidze koszykówki mężczyzn w sezonie 2022/2023.
+
+# Sezon 2022/2023
+
+Debiutancki sezon w rozgrywkach II ligi był pełen wyzwań. **Lublinianka KUL Baketball** zakończyła rozgrywki z bilansem 3–25 i zajęła ostatnie miejsce w grupie B. Mimo sportowych niepowodzeń, trener (zawodnik 🙂) i prezes **Aleksander Mrozik** podkreślał wartość zdobytego doświadczenia przez młodych zawodników. Projekt skupiał się nie tylko na rywalizacji, ale przede wszystkim na szkoleniu lokalnych talentów i budowaniu silnych fundamentów pod przyszłość koszykówki w Lublinie.
+
+![Lublinianka KUL Basketball - 2022/2023](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2022-1-zdj.jpg)
+
+# Sezon 2023/2024 
+Przed kolejnym sezonem drużynę objął **Przemysław Łuszczewski**, znany z sukcesów w lubelskich klubach. Efekt? Bilans 24–6 w sezonie zasadniczym, 4. miejsce w grupie B oraz awans do drugiej rundy fazy play-off, gdzie **Lublinianka** stoczyła pasjonującą 3-meczową serię z **BS Polonią Bytom**. Klub odniósł 27 zwycięstw w 35 spotkaniach sezonu łącznie, a emocji nie brakowało – m.in. dzięki kluczowym trafieniom **Michaela Gospodarka** i **Mateusza Wiśniewskiego** w końcówkach meczów.
+
+Na wyróżnienia zasłużyli również indywidualni gracze: **Roger Dale Ray** został najlepszym strzelcem II ligi (śr. 24,95 pkt/mecz) oraz trafił do najlepszej piątki grupy B. Trener **Łuszczewski** także odebrał nagrodę dla najlepszego trenera grupy B od PZKosz. Pomimo kontuzji **Kacpra Rogalskiego**, zespół wykazał się niezwykłą wolą walki i solidną organizacją. To był sezon, który pokazał, że koszykówka w Lublinie wraca na poważnie.
+
+![Lublinianka KUL Basketball - 2023/2024](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2023-1-zdj.jpg)
+
+# Sezon 2024/2025
+Ten sezon to kolejny etap przebudowy. Przed sezonem z funkcji prezesa zrezygnował **Aleksander Mrozik**, skupiając się na sprawach rodzinnych. Nowym prezesem został **Jacek Lipski**, dotychczasowy trener młodzieżowych grup Lublinianki. Zespół rozpoczął rozgrywki pod wodzą trenera **Rafała Ziemoląga**, jednak w trakcie sezonu doszło do zmiany – stery przejął **Kyle Moon**. 
+
+Drużyna zakończyła rundę zasadniczą z bilansem 18–12, zajmując 6. miejsce i awansując do fazy play-off. To kolejny dowód na systematyczny rozwój projektu i wzrost znaczenia **Lublinianki** na koszykarskiej mapie Polski. Sezon trwa, a klub z Lublina znów daje powody do dumy lokalnym kibicom. Dalsze losy drużyny w play-offach – wkrótce.
+
+![Lublinianka KUL Basketball - 2024/2025](C:\\Users\\Kuba\\Desktop\\schule\\rstudio\\home_projects\\2025-zdj.jpg)
+
+# Tak powinna wyglądać drużyna w II lidze
+
+**Lublinianka KUL Basketball** konsekwentnie realizuje swoją wizję klubu, który stawia na rozwój młodzieży i promocję lokalnych talentów. Projekt łączy doświadczenie zawodników takich jak **Adam Myśliwiec** czy **Michael Gospodarek** z młodością i potencjałem koszykarzy pokroju **Karasińskiego** czy **Glonka**. To połączenie tworzy zespół dynamiczny, ambitny i pełen energii. A przede wszystkim zespół któremu chce się kibicować.
+
+Zmiana trenerów w trakcie sezonu była bez wątpienia odważnym posunięciem, ale czas pokaże, czy przyniesie oczekiwane efekty. Na ten moment trzeba przyznać jedno – **Lublinianka KUL** wykonuje kawał dobrej roboty dla lubelskiej koszykówki. Projekt zmierza w dobrym kierunku, dając zawodnikom realną szansę rozwoju i możliwość dalszej kariery w innych klubach po krótkim, ale cennym epizodzie w **Lubliniance**.
+
+
+
+*Dziękuję za przeczytanie tego artykułu, zapraszam na mecze 2 ligi mężczyzn *:)
+
+
+*Przypisy:*
+*https://www.facebook.com/BasketAzsUmcs*
+*https://www.facebook.com/mksstartlublin*
+*https://lublinianka-basketball.pl/*
+*https://pulsbasketu.com/pl/*
+*https://rozgrywki.pzkosz.pl/liga/4/terminarz_i_wyniki.html*
+*https://www.lzkosz.com.pl/*
+*https://www.facebook.com/LubliniankaBasketball*
+
