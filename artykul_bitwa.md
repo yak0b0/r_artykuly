@@ -1,0 +1,185 @@
+---
+title: "Skandale na Parkiecie: Historia Bójek w Polskiej Koszykówce"
+author: "Autor: Jakub Żołdak"
+date: "2025-05-04"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    theme: united
+    highlight: tango
+    number_sections: false
+    anchor_sections: true
+    code_download: true
+    fig_caption: true
+    self_contained: false
+    keep_md: true
+---
+
+# Wstęp
+
+<br>
+
+Ten artykuł powstaje na świeżo, pod wpływem emocji, które wywołał ostatni viralowy filmik krążący po internecie. Chodzi o kontrowersyjne wydarzenia po meczu **Pekao 1. Ligi Mężczyzn**, które rozgrzały kibiców koszykówki w całej **Polsce.** Zacząłem się zastanawiać – jakie były najbardziej pamiętne bójki i przepychanki w historii **PLK** lub szerzej – polskiej koszykówki?
+
+<br>
+
+# Incydent w Łańcucie – 2025
+
+<br>
+
+Do wspomnianego incydentu doszło tuż po końcowej syrenie decydującego, piątego meczu I rundy play-off **Bank Pekao 1. Ligi Koszykówki Mężczyzn**. Na parkiecie rywalizowały **Muszynianka Sokół Łańcut** i **Sensation Kotwica Port Morski Kołobrzeg**.
+
+Jeden z kibiców gospodarzy, stojący blisko parkietu, oblał wodą **Remona Nelsona**, zawodnika **Kotwicy**. Ten incydent wywołał natychmiastową reakcję **Amerykanina** – doszło do ostrej konfrontacji, a nawet wymiany ciosów, co uwieczniono na nagraniu krążącym w sieci. Na chwilę obecną **Polski Związek Koszykówki** nie wydał żadnego oficjalnego komunikatu w tej sprawie.
+
+> [Nagranie](https://x.com/plkmeme/status/1915130475989131418)
+
+To wydarzenie skłania do refleksji – czy polska koszykówka widziała już wcześniej podobne sceny? W kolejnych akapitach przyjrzymy się konfliktom, przepychankom i bójkom, które zapisały się w historii naszych parkietów.
+
+<br>
+
+# **Legendarne starcie:** Gurović vs. Kelati – jedna z najgłośniejszych bójek w historii PLK (25.05.2008)
+
+![zdj. Wojciech Figurski](https://v.wpimg.pl/OTI5MTEuYDUoVztnag5tIGsPbz0sV2N2PBd3dmpEfWR5TXtjcFo8MmRUKTksGyYnPUcsNy8UYSM5Vik6awUjezpBIiYkEipmZlMoNTEAPTEtaiImLBImOihZYmEnFHs1Kg14YnFMLGJ9anxtcEx9bXgEYz41Em0p)
+
+<br>
+
+Jedną z najbardziej pamiętnych awantur w polskiej koszykówce było starcie między **Milanem Gurovićem** (**Prokom Trefl Sopot**) a **Thomasem Kelatim** (**BOT KS Turów Zgorzelec**) podczas finałów **PLK** w sezonie **2007/2008**. Warto przypomnieć, że w tamtym czasie liga nosiła nazwę **Dominet Bank Ekstraliga**. Starcie to miało miejsce w czwartym meczu serii finałowej pomiędzy **BOT KS Turów Zgorzelec** a **Prokomem Treflem Sopot**.
+
+Do incydentu doszło w trzeciej minucie drugiej kwarty, **25 maja 2008** **roku**. Po odgwizdanym przewinieniu **Gurović**, znany z temperamentu serbski lider **Prokomu**, wdał się w gwałtowną dyskusję z **Kelatim**. Sytuacja eskalowała, gdy do kłótni dołączył **Iwo Kitzinger** z **Turowa**, popychając **Gurovicia**. W odpowiedzi **Serb** zaatakował **Kelatiego**, zaciskając palce na jego twarzy i unosząc zaciśniętą pięść, co uwiecznił fotograf **Pan Figurski**. W bójkę zaangażowali się zawodnicy obu drużyn, a sędziowie i ochrona musieli rozdzielać graczy.
+
+Konsekwencje były poważne – obie drużyny zostały ukarane wysokimi grzywnami finansowymi przez **PZKosz**. **Prokom Trefl Sopot** musiał zapłacić blisko **45** tysięcy złotych, natomiast **BOT Turów Zgorzelec** – około **25** tysięcy. **Gurovic** został zawieszony na piąty mecz serii finałowej. Ten incydent na długo zapisał się w pamięci kibiców i mediów jako jedna z najbardziej drastycznych bójek w historii basketu w **Polsce**.
+
+<br>
+
+> Źródła:
+>
+> -   [Artykuł 1](https://sportowefakty.wp.pl/koszykowka/778323/mija-10-lat-od-slynnej-bojki-w-plk-thomas-kelati-do-dzisiaj-nie-wiem-dlaczego-gu)
+> -   [Artykuł 2](https://pzkosz.pl/aktualnosci/n/59059/prokom-trefl-sopot-najlepszy-w-dbe--dylewicz-mvp-finalow-2008-.html)
+> -   [Artykuł 3](https://www.trojmiasto.pl/sport/Gurovic-zdyskwalifikowany-AMW-Arka-Gdynia-n28240.html)
+> -   [Nagranie 1](https://www.youtube.com/watch?v=fKz8260pMTc)
+
+# **Skandal na trybunach w Hali Mistrzów:** Bójka kibiców Anwilu Włocławek i Stali Ostrów Wielkopolski (8.01.2022)
+
+<br>
+
+**8 stycznia 2022 roku** w **Hali Mistrzów** we **Włocławku** odbył się mecz pomiędzy **Anwilem Włocławek** a **Arged BM Stal Ostrów Wielkopolski** – dwoma drużynami, których rywalizacja od lat elektryzuje fanów koszykówki w **Polsce**. Choć spotkanie na parkiecie przebiegało zgodnie z przepisami, to niestety na trybunach doszło do gorszących scen, które nie powinny mieć miejsca w żadnym obiekcie sportowym.
+
+Mecz między **Anwilem Włocławek** a **Stalą Ostrów Wielkopolski** zapowiadał się jako kolejne starcie dwóch utytułowanych drużyn, których kibice należą do najbardziej zagorzałych w lidze. Atmosfera na trybunach była napięta od pierwszych minut – fani obu klubów wygwizdywali się i obrzucali wyzwiskami. W połowie pierwszej kwarty sytuacja wymknęła się spod kontroli.
+
+Jak można zobaczyć na dostępnych w sieci nagraniach, kibice obu drużyn od początku spotkania prowokowali się wzajemnie. Po kilku minutach atmosfera eskalowała. Grupy pseudokibiców zaczęły rzucać w siebie butelkami i nawzajem się obrażać. Wkrótce potem kilku chuliganów z **Włocławka** przedarło się przez ochronę i rzuciło się na fanów gości, co doprowadziło do regularnej bójki na pięści i kopniaki. Bijatyka trwała kilkadziesiąt sekund.
+
+Policja z **Włocławka** zareagowała szybko, zatrzymując dwóch mężczyzn w związku z bójką. Niestety, nie znalazłem oficjalnego oświadczenia **Orlen Basket Ligi** (**PLK**) w tej sprawie.
+
+Incydent ten pokazuje, jak ważne jest skuteczne zarządzanie bezpieczeństwem na meczach. Obecność dzieci i rodzin na trybunach dodatkowo podkreśla, że takie zachowania są niedopuszczalne i dają fatalny przykład młodym kibicom.
+
+<br>
+
+> Źródła:
+>
+> -   [Artykuł 1](https://www.sport.pl/koszykowka/7,65036,27983763,bojka-we-wloclawku-skandaliczne-sceny-w-ekstraklasie-koszykarzy.html)
+> -   [Nagranie 1](https://www.youtube.com/watch?v=oqJtPtj8T8g)
+> -   [Nagranie 2](https://www.youtube.com/watch?v=-XpMHGfA0o8)
+> -   [Nagranie 3](https://twitter.com/i/status/1479857269126930438)
+
+# **Skandal w Lublinie:** Wybuch agresji Tomasza Celeja w play-off 1. Ligi Mężczyzn (20.04.2013)
+
+<br>
+
+**Polska** koszykówka, nawet na poziomie **1. Ligi Mężczyzn**, nie jest wolna od emocji i kontrowersji. Jednym z najbardziej szokujących incydentów w historii rozgrywek był wybuch agresji **Tomasza Celeja**, zawodnika **Wikany Start Lublin**, podczas trzeciego meczu **I rundy play-off** przeciwko **WKS Śląskowi Wrocław** w sezonie **2012/2013**. Do zdarzenia doszło w 4. kwarcie, a jego konsekwencje zakończyły karierę **Celeja** – choć po latach zaskoczył wszystkich powrotem na parkiet.
+
+Mecz numer 3 **I rundy play-off 1. Ligi Mężczyzn**, rozegrany **20 kwietnia 2013 roku**. **Wikana Start Lublin** walczyła o awans z faworyzowanym **Śląskiem Wrocław**. Pod koniec spotkania atmosfera była napięta, a frustracja gospodarzy narastała z powodu kontrowersyjnego sędziowania oraz niekorzystnego wyniku.
+
+Na około 5 minut przed końcem 4. kwarty **Tomasz Celej**, doświadczony zawodnik **Startu**, stracił panowanie nad sobą. Najpierw uderzył **Krzysztofa Sulimę**, gracza **Śląska**. Zaledwie dwie minuty później **Celej** zaatakował kolejnego przeciwnika, **Norberta Kulona**, a w kulminacyjnym momencie… uderzył **sędziego Piotra Kustosza**. Całe zajście, które wstrząsnęło kibicami, zostało uwiecznione na nagraniu.
+
+**Tomasz Celej** w późniejszych wypowiedziach tłumaczył swój wybuch agresji fatalnym poziomem sędziowania – nie tylko w tym konkretnym meczu, ale i w całej serii. **PZKosz** nie miał jednak wątpliwości – zawodnik został zdyskwalifikowany na **2** sezony i ukarany grzywną w wysokości **10** tysięcy złotych.
+
+Jak sam **Celej** przyznał, kara była dla niego „*wyrokiem na karierę*”. W wieku 36 lat, po dyskwalifikacji, postanowił zakończyć profesjonalną grę. Incydent w **Lublinie** stał się jednym z najgłośniejszych skandali w historii **1. Ligi Mężczyzn**.
+
+Mimo wszystko historia zatoczyła koło: po 11 latach przerwy, w wieku 47 lat, Tomasz Celej wrócił na parkiet, reprezentując barwy SSK Lublinianka – kolejnego klubu z Lublina. Więcej o jego klubie przeczytasz w tym artykule [tutaj](https://alleyoop.pl/2025/04/15/krotka-historia-lubelskiej-koszykowki-na-parkietach-drugiej-ligi/).
+
+<br>
+
+> Źródła:
+>
+> -   [Artykuł 1](https://ddwloclawek.pl/pl/13_sport/7525_byly-gracz-anwilu-uderzyl-sedziego-dostal-najwyzszy-wymiar-kary.html)
+> -   [Artykuł 2](https://www.dziennikwschodni.pl/sport/koszykowka/tomasz-celej-zawieszony-koszykarz-startu-chce-jeszcze-zagrac,n,1000007512.html)
+> -   [Nagranie 1](https://www.youtube.com/watch?v=WCgv3uxRBtE)
+
+# **Klasyk sprzed lat:** Bójka Komfort-Spójni Stargard z Nobilesem Włocławek (03.12.1994)
+
+<br>
+
+**Polska** koszykówka ma w swojej historii momenty, które zapadają w pamięć na dekady. Jednym z takich wydarzeń była legendarna bójka podczas meczu **Komfort-Spójnia Stargard** kontra **Nobiles Włocławek**, do której doszło **3 grudnia 1994 roku** w ramach ówczesnej **I Ligi** (obecnie **Orlen Basket Liga**). To starcie, określane przeze mnie jako „*smaczek klasyczek*”, przeszło do historii jako jeden z najbardziej chaotycznych epizodów polskiej koszykówki.
+
+Jak relacjonuje **Grzegorz Drążek** w swoim artykule:
+
+„*Wszystko zaczęło się od spięcia pomiędzy **Martinem Egglestonem** z **Komfort-Spójni** i **Romanem Olszewskim** z **Nobilesu**. Po chwili awanturowali się ze sobą **Tyrone Thomas** ze **Spójni** i **Igor Griszczuk** z **Nobilesu**. W ruch poszły pięści, doszło do regularnej bijatyki.*”
+
+Na parkiecie zapanował chaos. Nagranie z meczu pokazuje, jak zawodnicy obu drużyn wdali się w przepychanki, a sędziowie z trudem próbowali opanować sytuację. Skala incydentu była tak duża, że arbitrzy podjęli drastyczną decyzję: większość zawodników została zdyskwalifikowana, a gra mogła być kontynuowana jedynie w formacie... **3 na 3!** Tak, każda drużyna miała na parkiecie zaledwie trzech zawodników przez ostatnie 20 minut regulaminowego czasu gry, a potem jeszcze przez całą dogrywkę. Mimo walki, **Spójnia** przegrała to starcie.
+
+Po meczu zawodnicy **Nobilesu** opuścili halę w **Stargardzie** pod eskortą policji. Decyzją **PZKosz** nałożono surowe kary. **Martin Eggleston** i **Igor Griszczuk** zostali zawieszeni na **cztery** mecze, **Tyrone Thomas** i **Henryk Wardach** – na **dwa**. Dodatkowo **Spójnia** została ukarana grzywną w wysokości **15** milionów ówczesnych złotych, a klub z **Włocławka** – **10** milionów.
+
+*Dla kontekstu: **15** milionów złotych z **1994 roku**, po denominacji i uwzględnieniu inflacji, odpowiada dziś (w **2025 roku**) wartości ok. **10 000–12 000 PLN**.*
+
+<br>
+
+> Źródła:
+>
+> -   [Artykuł 1](https://wloclawek.naszemiasto.pl/25-lat-temu-doszlo-do-wielkiej-bijatyki-w-meczu-spojnia/ar/c2-5018444)
+> -   [Nagranie 1](https://www.youtube.com/watch?v=K-7AfF4nfvg)
+
+# **ALBA Chorzów –** zapomniany rozdział koszykarskich bójek z początku XXI wieku
+
+![zdj. Andrzej Szkocki](https://d-art.ppstatic.pl/kadry/k/r/1/ec/7d/55c41ac3d5e32_o_xlarge.jpg)
+
+<br>
+
+Podczas zbierania materiałów do tego zestawienia natrafiłem na prawdziwy unikat – archiwalne nagrania i artykuły dotyczące bójek z udziałem drużyny **ALBA Chorzów**. Choć trudno dziś znaleźć szczegółowe informacje o tych incydentach, ze względu na ich wiek i ograniczoną dostępność źródeł, to niewątpliwie stanowią one interesujący epizod w historii polskiej koszykówki.
+
+Te zapomniane dziś wydarzenia, choć marginalne w skali całej historii polskiej koszykówki, pokazują, że napięcia i agresja towarzyszyły naszej lidze nie tylko w czasach współczesnych. **ALBA Chorzów** pozostaje ciekawostką i "*rodzynkiem*" dla fanów historii basketu – warto zapoznać się z poniższymi materiałami, jeśli interesują Cię kontrowersje i emocje tamtych lat:
+
+<br>
+
+> Źródła:
+>
+> -   [Artykuł 1](https://gs24.pl/bojka-na-koniec/ar/5165330)
+> -   [Nagranie 1](https://www.youtube.com/watch?v=1PSzMEgm2-0)
+> -   [Wikipedia](https://pl.wikipedia.org/wiki/Alba_Chorz%C3%B3w)
+
+# **Dlaczego bójki w koszykówce budzą takie emocje?**
+
+<br>
+
+Bójki w **polskiej** koszykówce – czy to na parkiecie, jak w przypadku **Gurovića** i **Celeja**, czy na trybunach, jak w **Włocławku** – wynikają z ogromnej pasji, która napędza ten sport. Presja wyniku, prowokacje kibiców, kontrowersyjne decyzje sędziów czy osobiste animozje mogą zamienić mecz w pole bitwy. Jednak takie incydenty, choć widowiskowe, rzucają cień na koszykówkę, zwłaszcza gdy świadkami są młodzi fani. Kluby, **PZKosz** i organizatorzy muszą zadbać o bezpieczeństwo i kulturę kibicowania, by emocje przekuwać w fair play, a nie chaos.
+
+<br>
+
+# **Podsumowanie**
+
+<br>
+
+Od chaosu 3 na 3 w **Stargardzie**, przez atak **Celeja** na sędziego, po kibica oblewającego wodą **Nelsona** w **Łańcucie** – bójki w **polskiej** koszykówce to historie pełne emocji, ale i przestrogi. Te incydenty pokazują, jak cienka jest granica między pasją a agresją, i przypominają, że koszykówka to nie tylko walka o punkty, ale też o szacunek – na parkiecie i poza nim.
+
+<br>
+
+**A Ty? Jakie bójki pamiętasz? Daj znać w komentarzach!**
+
+<br>
+
+## Przypisy
+
+> -   [PZKosz](https://pzkosz.pl/)
+> -   [Denominacja](https://www.podatki.gov.pl/kalkulatory-podatkowe/kalkulator-inflacji/)
+> -   [Anwil Włocławek](https://kkwloclawek.pl/)
+> -   [Start Lublin](https://www.startlublin.pl/)
+> -   [Spójnia Stargard](https://spojniastargard.com/)
+> -   [Śląsk Wrocław](https://wks-slask.eu/)
+> -   [Ostrów Wielkopolski](https://www.facebook.com/TasomixRosiekStalOstrowWielkopolski/)
+> -   [Turów Zgorzelec](http://www.ksturow.eu/)
+> -   [Trefl Sopot](https://treflsopot.pl/)
+> -   [Sokół Łańcut](https://www.facebook.com/PTGSokolLancut/?locale=pl_PL)
+> -   [Kotwica Kołobrzeg](https://www.facebook.com/kotwicakosz/?locale=pl_PL)
